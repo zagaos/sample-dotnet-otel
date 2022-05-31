@@ -1,0 +1,27 @@
+{
+    "csharp.suppressBuildAssetsNotification": true,
+    "csharp.suppressDotnetInstallWarning": true,
+    "csharp.suppressDotnetRestoreNotification": true,
+    "csharp.suppressProjectJsonWarning": true,
+    "omnisharp.disableMSBuildDiagnosticWarning": true,
+    "window.title": "${rootName}${separator}${activeEditorShort}",
+    "editor.bracketPairColorization.enabled": true,
+    "workbench.colorCustomizations": {
+        "titleBar.activeForeground": "#fff",
+        "titleBar.inactiveForeground": "#000",
+        "titleBar.activeBackground": "#f15733",
+        "titleBar.inactiveBackground": "#f1573380"
+    },
+    "omnisharp.enableImportCompletion": true,
+    "gitlens.codeLens.scopes": [
+        "document",
+        "containers",
+        "blocks"
+    ],
+    "omnisharp.loggingLevel": "warning",
+    "[csharp]": {
+        "editor.defaultFormatter": "ms-dotnettools.csharp"
+    },
+    "razor.disabled": true,
+    "workbench.startupEditor": "readme",
+}

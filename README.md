@@ -12,13 +12,13 @@ dotnet run
 ## Metrics example
 
 ```
-cd Org.WebAPI
+cd Org.Worker
 dotnet run
 ```
 
 ## Logs example
 
 ```
-cd Org.MyWebApp
+cd Org.WebAPI
 dotnet run
 ```

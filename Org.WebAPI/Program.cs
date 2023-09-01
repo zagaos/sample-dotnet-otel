@@ -11,6 +11,23 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddOpenTelemetryTracing(budiler =>
+{
+    budiler
+        .AddAspNetCoreInstrumentation(opt =>
+        {
+            opt.RecordException = true;
+        })
+        .SetResourceBuilder(ResourceBuilder.CreateDefault()
+            .AddService("Org.WebAPI")
+            .AddTelemetrySdk()
+        )
+        .SetErrorStatusOnException(true)
+        .AddOtlpExporter(options =>
+        {
+            options.Endpoint = new Uri("http://localhost:4317"); // Signoz Endpoint
+        });
+});
 // builder.Logging.ClearProviders();
 // builder.Logging.AddOpenTelemetry(options =>
 // {

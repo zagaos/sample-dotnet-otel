@@ -25,7 +25,7 @@ builder.Services.AddOpenTelemetryTracing(budiler =>
         .SetErrorStatusOnException(true)
         .AddOtlpExporter(options =>
         {
-            options.Endpoint = new Uri("http://localhost:4317"); // Signoz Endpoint
+            options.Endpoint = new Uri("http://otel-collector.observability.svc.cluster.local:4317");
         });
 });
 // builder.Logging.ClearProviders();

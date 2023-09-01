@@ -29,10 +29,10 @@ builder.Services.AddLogging(logging => logging.AddOpenTelemetry(openTelemetryLog
        // exporter.Protocol = OtlpExportProtocol.HttpProtobuf;
         //exporter.Endpoint = new Uri("https://seq.example.com/ingest/otlp/v1/logs");
         //exporter.Headers = "X-Seq-ApiKey=fd8sHZ28fajva8t32Ngjfdisp";
-        option.Protocol = OtlpExportProtocol.Grpc;
+        exporter.Protocol = OtlpExportProtocol.Grpc;
             // option.Endpoint = new Uri("https://otel-custom-grpc-otel.apps.cluster-hvnhl.hvnhl.sandbox2235.opentlc.com"); // Expose gRPC endpoint as route doesn't work!!!
-            option.Endpoint = new Uri("http://otel-collector.observability.svc.cluster.local:4317"); // Only gRPC service endpoint works, 
-            option.ExportProcessorType = ExportProcessorType.Batch;
+            exporter.Endpoint = new Uri("http://otel-collector.observability.svc.cluster.local:4317"); // Only gRPC service endpoint works, 
+            exporter.ExportProcessorType = ExportProcessorType.Batch;
     });
 }));
 
